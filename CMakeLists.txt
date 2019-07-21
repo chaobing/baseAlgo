@@ -1,0 +1,21 @@
+cmake_minimum_required(VERSION 2.6)
+project(BaseAlgo)
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
+set(TOP_DIR  ${PROJECT_SOURCE_DIR})
+set(INCLUDE_DIR ${TOP_DIR}/src)
+set(SOURCE_DIR ${TOP_DIR}/src)
+set(LIBRARY_DIR ${TOP_DIR}/lib)
+set(LIBRARY_OUTPUT_PATH ${TOP_DIR}/lib)
+
+message( STATUS "TOP_DIR: 	 ${TOP_DIR}")
+message( STATUS "INCLUDE_DIR: 	 ${INCLUDE_DIR}")
+message( STATUS "SOURCE_DIR: 	 ${SOURCE_DIR}")
+message( STATUS "LIBRARY_DIR: 	 ${LIBRARY_DIR}")
+message( STATUS "EXECUTABLE_OUTPUT_PATH: 	 ${EXECUTABLE_OUTPUT_PATH}")
+message( STATUS "LIBRARY_OUTPUT_PATH: 	 ${LIBRARY_OUTPUT_PATH}") 
+
+
+link_directories(${LIBRARY_DIR})
+include_directories(${INCLUDE_DIR})
+add_subdirectory(src)
+add_subdirectory(test)
