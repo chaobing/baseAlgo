@@ -1,8 +1,10 @@
 set(targetName testBuble)
+set(EXECUTABLE_OUTPUT_PATH ${EXECUTABLE_PATH})
 add_executable(${targetName} testBuble.cpp)
 link_directories(${INCLUDE_DIR})
-target_link_libraries(${targetName} BaseAlgo)
+target_link_libraries(${targetName} sort)
 
+set(EXECUTABLE_OUTPUT_PATH ${EXECUTABLE_PATH})
 add_executable(testQuick testQuickSort.cpp)
 link_directories(${INCLUDE_DIR})
-target_link_libraries(testQuick BaseAlgo)
+target_link_libraries(testQuick sort)

@@ -1,4 +1,6 @@
-mkdir build
+#!/bin/sh
+mkdir -p build
 cd build
-cmake ..
-make
+cmake -DCMAKE_BUILD_TYPE=Debug ..
+make -j4
+
