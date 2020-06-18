@@ -3,6 +3,7 @@
 
 #include "common.hpp"
 
+#define CPU_NUM sysconf(_SC_NPROCESSORS_CONF)
 
 class Util {
 private:
@@ -10,35 +11,39 @@ private:
     ~Util() {}
 
 public:
-    template <typename T>
-    static T Random(T low, T high);
-    template <typename T>
-    static void Random(T* data, uint64_t size, T low, T high, uint64_t seed);
-	template<typename T>
-	static string Vector2String(T* data, uint64_t size);
+  template <typename T> static T Random(T low, T high);
+  template <typename T>
+  static void Random(T *data, uint64_t size, T low, T high, uint64_t seed);
+  template <typename T> static string Vector2String(T *data, uint64_t size);
+  static uint32_t get_cpu_num();
 
-// used to calculate time
 public:
-    // used to calculate time
-    enum TimeType {
-        TIME_S,
-        TIME_MS,
-        TIME_US,
-    };
-    static void TimeBegin(struct timeval &begin) { gettimeofday(&begin, 0); }
-    static unsigned long TimeEnd(const struct timeval &begin, int type = TIME_MS) {
-        struct timeval end;
-        gettimeofday(&end, 0);
-        if(type == TIME_S) {
-            return (1000000*(end.tv_sec-begin.tv_sec) + (end.tv_usec-begin.tv_usec)) / 1000000;
-        } else if(type == TIME_MS) {
-            return (1000000*(end.tv_sec-begin.tv_sec) + (end.tv_usec-begin.tv_usec)) / 1000;
-        } else {
-            return (1000000*(end.tv_sec-begin.tv_sec) + (end.tv_usec-begin.tv_usec)) / 1;
-        }
+  // used to calculate time
+  enum TimeType {
+    TIME_S,
+    TIME_MS,
+    TIME_US,
+  };
+  static void TimeBegin(struct timeval &begin) { gettimeofday(&begin, 0); }
+  static unsigned long TimeEnd(const struct timeval &begin,
+                               int type = TIME_MS) {
+    struct timeval end;
+    gettimeofday(&end, 0);
+    if (type == TIME_S) {
+      return (1000000 * (end.tv_sec - begin.tv_sec) +
+              (end.tv_usec - begin.tv_usec)) /
+             1000000;
+    } else if (type == TIME_MS) {
+      return (1000000 * (end.tv_sec - begin.tv_sec) +
+              (end.tv_usec - begin.tv_usec)) /
+             1000;
+    } else {
+      return (1000000 * (end.tv_sec - begin.tv_sec) +
+              (end.tv_usec - begin.tv_usec)) /
+             1;
     }
+  }
 };
-
 
 template <typename T>
 T Util::Random(T low, T high)

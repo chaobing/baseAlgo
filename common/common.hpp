@@ -22,15 +22,16 @@
 #include <bitset>
 #include <unordered_map>
 
-#include <iomanip>
-#include <thread>
-#include <mutex>
-#include <memory>
-#include <utility>
-#include <random>
 #include <algorithm>
-#include <stdexcept>
+#include <future>
+#include <iomanip>
 #include <limits>
+#include <memory>
+#include <mutex>
+#include <random>
+#include <stdexcept>
+#include <thread>
+#include <utility>
 
 #include <glog/logging.h>
 
