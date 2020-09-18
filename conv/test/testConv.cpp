@@ -34,14 +34,21 @@ int main(){
   tconv.run(0);
   unsigned long latency = Util::TimeEnd(start, Util::TIME_MS);
   cout << "latency is " << latency << " ms" << endl;
+  tconv.get_out(out.data());
 
   cout << "============= thread run ==============" << endl;
-  struct timeval start_t;
-  Util::TimeBegin(start_t);
-  cout << "start time: " << start_t.tv_sec << endl;
+  Util::TimeBegin(start);
+  cout << "start time: " << start.tv_sec << endl;
   tconv.run(1);
-  latency = Util::TimeEnd(start_t, Util::TIME_MS);
+  latency = Util::TimeEnd(start, Util::TIME_MS);
   cout << "latency is " << latency << " ms" << endl;
+  vector<char> out2(tconv.ofm_size());
+  tconv.get_out(out2.data());
+  for (auto i = 0; i < out.size(); i++) {
+    if (out[i] != out2[i])
+      cout << "[diff] idx: " << i << ", normal: " << out[i]
+           << ", thread: " << out2[i] << endl;
+  }
 
   return 0;
 }
