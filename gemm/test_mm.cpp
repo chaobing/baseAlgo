@@ -3,14 +3,25 @@
 #include <stdlib.h>
 #include <string.h>
 
+// 1-tile, 2-tile_sse
+#define TEST_TILE 1
+#define TEST_TILE_SSE 2
+#define TEST_TILE_SSE_PACK 3
+#define TEST_MODE TEST_TILE_SSE_PACK
+
 #include "dclock.h"
 #include "mm_base.h"
+#if (TEST_MODE == TEST_TILE)
 #include "mm_tile.h"
-//#include "mm_tile_sse.h"
+#endif
+#if (TEST_MODE == TEST_TILE_SSE)
+#include "mm_tile_sse.h"
+#endif
+#if (TEST_MODE == TEST_TILE_SSE_PACK)
+#include "mm_tile_sse_pack.h"
+#endif
 using namespace std;
 
-#define A(i, j) a[(i)*lda + (j)]
-#define B(i, j) b[(i)*ldb + (j)]
 #define abs(x) ((x) < 0.0 ? -(x) : (x))
 
 void random_matrix(int m, int n, float *a, int lda) {
@@ -95,8 +106,15 @@ int main() {
 
       clock_gettime(CLOCK_MONOTONIC_RAW, &start);
 
+#if (TEST_MODE == TEST_TILE)
       mm_tile(m, n, k, a, lda, b, ldb, c, ldc);
-      // mm_tile_sse(m, n, k, a, lda, b, ldb, c, ldc);
+#endif
+#if (TEST_MODE == TEST_TILE_SSE)
+      mm_tile_sse(m, n, k, a, lda, b, ldb, c, ldc);
+#endif
+#if (TEST_MODE == TEST_TILE_SSE_PACK)
+      mm_tile_sse_pack(m, n, k, a, lda, b, ldb, c, ldc);
+#endif
 
       clock_gettime(CLOCK_MONOTONIC_RAW, &end);
 

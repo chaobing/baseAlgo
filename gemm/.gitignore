@@ -1,2 +1,4 @@
 test_mm.o
 test_mm.bin
+/how-to-optimize-gemm
+/log

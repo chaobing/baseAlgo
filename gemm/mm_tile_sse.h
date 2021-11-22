@@ -1,21 +1,17 @@
 #include <stdio.h>
 
-
 #include <emmintrin.h> // SSE3
 #include <mmintrin.h>
 #include <pmmintrin.h> // SSE2
 #include <xmmintrin.h> // SSE
 
 typedef union {
-  __m128d v;
+  __m128 v;
   float d[4];
 } v2df_t;
 
 void AddDot4x4(int k, float *a, int lda, float *b, int ldb, float *c, int ldc) {
-  float
-      /* Point to the current elements in the four rows of A */
-      *a_0p_pntr,
-      *a_1p_pntr, *a_2p_pntr, *a_3p_pntr;
+  float *a_0p_pntr, *a_1p_pntr, *a_2p_pntr, *a_3p_pntr;
 
   a_0p_pntr = &A(0, 0);
   a_1p_pntr = &A(1, 0);
@@ -71,15 +67,13 @@ void AddDot4x4(int k, float *a, int lda, float *b, int ldb, float *c, int ldc) {
   C(3, 2) += c_p3_sum.d[2];
   C(3, 3) += c_p3_sum.d[3];
 }
+
 void mm_tile_sse(int m, int n, int k, float *a, int lda, float *b, int ldb,
                  float *c, int ldc) {
   int i, j;
 
-  for (j = 0; j < n; j += 4) {   /* Loop over the columns of C, unrolled by 4 */
-    for (i = 0; i < m; i += 4) { /* Loop over the rows of C */
-      /* Update C( i,j ), C( i,j+1 ), C( i,j+2 ), and C( i,j+3 ) in one routine
-       * (four inner products) */
-
+  for (j = 0; j < n; j += 4) {
+    for (i = 0; i < m; i += 4) {
       AddDot4x4(k, &A(i, 0), lda, &B(0, j), ldb, &C(i, j), ldc);
     }
   }
