@@ -1,5 +1,8 @@
 #pragma once
 #include <iostream>
+#include <vector>
+using std::vector;
+
 class BaseAlgo {
 private:
   BaseAlgo(){};
