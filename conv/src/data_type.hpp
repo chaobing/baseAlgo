@@ -5,7 +5,7 @@
 struct FMapAttr;
 using fmap_coord_t = FMapAttr;
 
-typedef struct FMapAttr{
+typedef struct FMapAttr {
   int n;
   int h;
   int w;

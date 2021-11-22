@@ -6,7 +6,7 @@
 #define TMAX 127
 #define SEED 1
 
-int main(){
+int main() {
   cout << "current CPU num: " << CPU_NUM << endl;
   FMap_t fmap_i(1, 224, 224, 3);
   FMap_t fmap_w(64, 7, 7, 3);
