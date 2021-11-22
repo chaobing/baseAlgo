@@ -1,21 +1,4 @@
-#include <iostream>
-#include <vector>
-using namespace std;
-#include <gtest/gtest.h>
-
-struct ListNode {
-  int val;
-  ListNode *next;
-  ListNode(int x) : val(x), next(nullptr) {}
-};
-
-#define PRINT_LIST(li)                                                         \
-  do {                                                                         \
-    while (li) {                                                               \
-      cout << li->val << " ";                                                  \
-      li = li->next;                                                           \
-    }                                                                          \
-  } while (0);
+#include "../leetcommon.hpp"
 
 ListNode *detectCycle(ListNode *head) {
   ListNode *fast = head;
@@ -69,7 +52,7 @@ TEST(doublePointer, twoSum) {
   EXPECT_EQ(res, twoSum(arr, 19));
 }
 
-  int main(int argc, char *argv[]) {
-    ::testing::InitGoogleTest(&argc, argv);
-    return RUN_ALL_TESTS();
-  }
+int main(int argc, char *argv[]) {
+  ::testing::InitGoogleTest(&argc, argv);
+  return RUN_ALL_TESTS();
+}

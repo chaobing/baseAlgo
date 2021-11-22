@@ -1,15 +1,4 @@
-#include <iostream>
-#include <vector>
-using namespace std;
-#include <gtest/gtest.h>
-
-#define PRINT_ARR(prefix, arr)                                                 \
-  do {                                                                         \
-    cout << prefix << ": " << endl;                                            \
-    for (auto a : arr)                                                         \
-      cout << a << " ";                                                        \
-    cout << endl;                                                              \
-  } while (0);
+#include "../leetcommon.hpp"
 /*
  * mode: 0: find; 1: left_bound; 2: right_bound
  */

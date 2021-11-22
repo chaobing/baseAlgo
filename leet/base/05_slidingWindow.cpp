@@ -1,17 +1,4 @@
-#include <iostream>
-#include <string>
-#include <unordered_map>
-#include <vector>
-using namespace std;
-#include <gtest/gtest.h>
-
-#define PRINT_ARR(prefix, arr)                                                 \
-  do {                                                                         \
-    cout << prefix << ": " << endl;                                            \
-    for (auto a : arr)                                                         \
-      cout << a << " ";                                                        \
-    cout << endl;                                                              \
-  } while (0);
+#include "../leetcommon.hpp"
 
 string minWinSubStr(const string &s, const string &t) {
   unordered_map<char, int> needs;

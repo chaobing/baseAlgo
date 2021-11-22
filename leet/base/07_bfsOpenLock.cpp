@@ -1,10 +1,4 @@
-#include <iostream>
-#include <queue>
-#include <set>
-#include <string>
-#include <vector>
-using namespace std;
-#include <gtest/gtest.h>
+#include "../leetcommon.hpp"
 
 string plusOne(const string &ori, int i) {
   string ret = ori;

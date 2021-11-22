@@ -1,7 +1,4 @@
-#include <iostream>
-#include <vector>
-using namespace std;
-#include <gtest/gtest.h>
+#include "../leetcommon.hpp"
 
 int coinChange(const vector<int> &coin, int n) {
   /*  dp[i]: num of combine  sum  == i

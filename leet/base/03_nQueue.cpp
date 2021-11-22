@@ -1,26 +1,4 @@
-#include <iostream>
-#include <string>
-#include <vector>
-using namespace std;
-#include <gtest/gtest.h>
-
-#define PRINT_ARR(prefix, arr)                                                 \
-  do {                                                                         \
-    cout << prefix << ": " << endl;                                            \
-    for (auto a : arr)                                                         \
-      cout << a << " ";                                                        \
-    cout << endl;                                                              \
-  } while (0);
-#define PRINT_MAT(prefix, mat)                                                 \
-  do {                                                                         \
-    cout << prefix << ": " << endl;                                            \
-    for (auto arr : mat) {                                                     \
-      for (auto a : arr) {                                                     \
-        cout << a << endl;                                                     \
-      }                                                                        \
-      cout << "---------" << endl;                                             \
-    }                                                                          \
-  } while (0);
+#include "../leetcommon.hpp"
 
 vector<vector<string>> res;
 bool isValid(const vector<string> &board, int r, int c) {
