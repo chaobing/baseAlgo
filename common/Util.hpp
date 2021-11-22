@@ -7,8 +7,8 @@
 
 class Util {
 private:
-    Util() {}
-    ~Util() {}
+  Util() {}
+  ~Util() {}
 
 public:
   template <typename T> static T Random(T low, T high);
@@ -45,39 +45,34 @@ public:
   }
 };
 
-template <typename T>
-T Util::Random(T low, T high)
-{
-    std::random_device rd;
-    std::mt19937 gen(rd());
-    std::uniform_int_distribution<T> dis(low, high);
+template <typename T> T Util::Random(T low, T high) {
+  std::random_device rd;
+  std::mt19937 gen(rd());
+  std::uniform_int_distribution<T> dis(low, high);
 
-    return dis(gen);
+  return dis(gen);
 }
 
 template <typename T>
-void Util::Random(T* data, uint64_t size, T low, T high, uint64_t seed)
-{
-    std::random_device rd;
-    std::mt19937 gen(seed);
-    std::uniform_int_distribution<T> dis(low, high);
+void Util::Random(T *data, uint64_t size, T low, T high, uint64_t seed) {
+  std::random_device rd;
+  std::mt19937 gen(seed);
+  std::uniform_int_distribution<T> dis(low, high);
 
-    for(auto i=0U; i<size; i++) {
-        if(seed == 0)
-            data[i] = 0;
-        else
-            data[i] = dis(gen);
-    }
+  for (auto i = 0U; i < size; i++) {
+    if (seed == 0)
+      data[i] = 0;
+    else
+      data[i] = dis(gen);
+  }
 }
-template<typename T>
-string Util::Vector2String(T* data, uint64_t size){
-	std::ostringstream ss;
-	for(auto i=0U; i<size; i++){
-		ss << data[i] << " ";
-	}
-	ss<<std::dec<<"\n";
-	return ss.str();
+template <typename T> string Util::Vector2String(T *data, uint64_t size) {
+  std::ostringstream ss;
+  for (auto i = 0U; i < size; i++) {
+    ss << data[i] << " ";
+  }
+  ss << std::dec << "\n";
+  return ss.str();
 }
-
 
 #endif /*__UTIL_HPP__*/
