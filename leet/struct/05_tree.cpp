@@ -64,9 +64,9 @@ bool isValidBST(TreeNode *root) {
 TEST(fun, isValidBST) {
   //              5
   //             / \
-	//            1   4
+  //            1   4
   //               /  \
-	//              3    6
+  //              3    6
   vector<int> data({5, 1, 4, NaN, 3, 6});
   TreeNode *root = buildBST(data);
   cout << to_string(root) << endl;
@@ -85,7 +85,7 @@ bool hasPathSum(TreeNode *root, int sum) {
 TEST(fun, hasPathSum) {
   //              1
   //             / \
-	//            2   3
+  //            2   3
   vector<int> data({1, 2, 3});
   TreeNode *root = buildBST(data);
   cout << to_string(root) << endl;
@@ -116,11 +116,11 @@ int pathSum(TreeNode *root, int sum) {
 TEST(fun, pathSum) {
   //                10
   //               /  \
-	//              5    -3
+  //              5    -3
   //             / \     \
-	//            3   2     11
+  //            3   2     11
   //           / \    \
-	//          3  -2    1
+  //          3  -2    1
   vector<int> data({10, 5, -3, 3, 2, NaN, 11, 3, -2, NaN, 1});
   TreeNode *root = buildBST(data);
   cout << to_string(root) << endl;
