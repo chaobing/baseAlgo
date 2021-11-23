@@ -25,7 +25,7 @@ int lenOfLIS2(const vector<int> &nums) {
     int l = 0, r = piles;
     while (l < r) {
       int m = (l + r) >> 1;
-      if (p < top[m])
+      if (p > top[m])
         l = m + 1;
       else
         r = m;

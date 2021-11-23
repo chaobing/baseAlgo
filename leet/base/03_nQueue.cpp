@@ -42,4 +42,7 @@ vector<vector<string>> solveNQueue(int n) {
   return res;
 };
 
-int main(int argc, char *argv[]) { PRINT_MAT("mat", solveNQueue(8)) return 0; }
+int main(int argc, char *argv[]) {
+  PRINT_MAT("mat", solveNQueue(8));
+  return 0;
+}

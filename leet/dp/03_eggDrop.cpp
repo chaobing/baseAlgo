@@ -41,14 +41,14 @@ int eggDrop2(int k, int n) {
   }
   return m;
 }
-  TEST(fun, eggDrop2) {
-    int K = 2, N = 100;
-    EXPECT_EQ(14, eggDrop(K, N));
-    K = 1, N = 7;
-    EXPECT_EQ(7, eggDrop(K, N));
-  }
+TEST(fun, eggDrop2) {
+  int K = 2, N = 100;
+  EXPECT_EQ(14, eggDrop(K, N));
+  K = 1, N = 7;
+  EXPECT_EQ(7, eggDrop(K, N));
+}
 
-  int main(int argc, char *argv[]) {
-    ::testing::InitGoogleTest(&argc, argv);
-    return RUN_ALL_TESTS();
-  }
+int main(int argc, char *argv[]) {
+  ::testing::InitGoogleTest(&argc, argv);
+  return RUN_ALL_TESTS();
+}
