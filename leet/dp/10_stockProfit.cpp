@@ -1,8 +1,4 @@
-#include <climits>
-#include <iostream>
-#include <vector>
-using namespace std;
-#include <gtest/gtest.h>
+#include "../leetcommon.hpp"
 
 /*
  * dp[i][k][0] = max(dp[i-1][k][0], dp[i-1][k-1][1] + p[i]

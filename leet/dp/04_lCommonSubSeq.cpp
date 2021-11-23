@@ -1,8 +1,4 @@
-#include <iostream>
-#include <string>
-#include <vector>
-using namespace std;
-#include <gtest/gtest.h>
+#include "../leetcommon.hpp"
 
 int lenOfLCMSS(const string &s1, const string &s2) {
   int n1 = s1.size(), n2 = s2.size();

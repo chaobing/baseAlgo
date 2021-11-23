@@ -1,8 +1,4 @@
-#include <algorithm>
-#include <iostream>
-#include <vector>
-using namespace std;
-#include <gtest/gtest.h>
+#include "../leetcommon.hpp"
 
 /*min val to erase in A make it has no overlap*/
 int eraseOverlapIntervals(vector<vector<int>> &A) {

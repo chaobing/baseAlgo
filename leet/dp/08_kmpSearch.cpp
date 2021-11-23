@@ -1,10 +1,4 @@
-#include <functional>
-#include <iostream>
-#include <string>
-#include <unordered_map>
-#include <vector>
-using namespace std;
-#include <gtest/gtest.h>
+#include "../leetcommon.hpp"
 
 class KMP {
 public:

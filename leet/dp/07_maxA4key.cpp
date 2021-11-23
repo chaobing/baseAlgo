@@ -1,7 +1,4 @@
-#include <iostream>
-#include <vector>
-using namespace std;
-#include <gtest/gtest.h>
+#include "../leetcommon.hpp"
 
 int maxA(int n) {
   vector<int> dp(n + 1, 0);

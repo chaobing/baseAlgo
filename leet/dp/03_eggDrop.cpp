@@ -1,8 +1,4 @@
-#include <iostream>
-#include <unordered_map>
-#include <vector>
-using namespace std;
-#include <gtest/gtest.h>
+#include "../leetcommon.hpp"
 
 string kn2str(int k, int n) {
   return std::to_string(k) + "_" + std::to_string(n);

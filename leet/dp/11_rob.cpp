@@ -1,7 +1,4 @@
-#include <iostream>
-#include <vector>
-using namespace std;
-#include <gtest/gtest.h>
+#include "../leetcommon.hpp"
 
 int robBase(const vector<int> &A) {
   int n = A.size();

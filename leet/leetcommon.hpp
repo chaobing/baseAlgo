@@ -6,13 +6,17 @@
 #include <queue>
 #include <set>
 #include <string>
+#include <unordered_map>
 #include <vector>
 
 using std::cout;
 using std::endl;
+using std::max;
 using std::queue;
 using std::set;
 using std::string;
+using std::to_string;
+using std::unordered_map;
 using std::vector;
 
 struct ListNode {
