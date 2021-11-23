@@ -1,7 +1,4 @@
-#include <iostream>
-#include <vector>
-using namespace std;
-#include <gtest/gtest.h>
+#include "../leetcommon.hpp"
 
 int knapsack(int N, int W, const vector<int> &wt, const vector<int> &val) {
   /*  dp[i][j]: num i, weight j, max value

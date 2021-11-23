@@ -5,6 +5,6 @@ if [ ! -n "$1" ] ;then
 fi
 
 cppfile=$1
-g++  -g -std=c++11 -lgtest -lpthread -lgtest_main -I /usr/local/include/ -L /usr/local/lib/ \
+g++  -std=c++11 -lgtest -lpthread -lgtest_main \
 	  -o  $cppfile.bin \
 		$cppfile
