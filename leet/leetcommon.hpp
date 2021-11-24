@@ -40,6 +40,9 @@ struct TreeNode {
   TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
 };
 
+static const double DIFF = 1e-6;
+bool isSame(double a, double b) { return fabs(a - b) < DIFF; }
+
 #define PRINT_LIST(li)                                                         \
   do {                                                                         \
     while (li) {                                                               \
